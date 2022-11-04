@@ -27,7 +27,9 @@ Route::get('/', function () {
 
 Route::group(['middleware' => 'auth'], function () {
     Route::redirect('/', '/login');
-    Route::get('/test', [TestController::class, 'index'])->name('test');
+    Route::get('/images', [TestController::class, 'index'])->name('index');
+    Route::post('/upload-image', [TestController::class, 'uploadImage'])->name('upload-image');
+    Route::get('/create-canva', [TestController::class, 'createCanva'])->name('create-canva');
 });
 
 Route::get('/dashboard', function () {
