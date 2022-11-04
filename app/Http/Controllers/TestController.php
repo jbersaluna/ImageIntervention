@@ -9,8 +9,11 @@ class TestController extends Controller
 {
     public function index()
     {
-        $img = Image::canvas(1000, 600, '#ffEE5');
+        //create a color yellow blank canva
+        // $img = Image::canvas(1000, 600, '#ffEE5');
+
+        // create a new image resource from file
+        $img = Image::make('wallpaper.jpg');
         return $img->response();
-        // return phpinfo();
     }
 }
